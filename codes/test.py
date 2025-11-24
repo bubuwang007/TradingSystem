@@ -1,10 +1,8 @@
 import tushare as ts
+from ashare.tools import get_l3_companies_info
 
 ts.set_token('3be1c73e47c58ec998059aa2cfe64c87e03485fba0ab10c5788372f7')
-pro = ts.pro_api()
 
-df = pro.index_member_all(l3_code='851931.SI')
-
-for i in df['name']:
-
-    print(f'<LinkCard title="{i}" href="/A股/公司/{i}.md" description="{todo}"/>')
+with open('test_output.txt', 'w', encoding='utf-8') as f:
+    for i in get_l3_companies_info('857336.SI'):
+        f.write(i + '\n')
