@@ -4,7 +4,8 @@ import tushare as ts
 def get_l3_companies_info(l3_code: str):
     pro = ts.pro_api()
     df1 = pro.index_member_all(l3_code=l3_code)
-    print(df1["name"])
+    for i in df1["name"]:
+        print(i)
     df2 = pro.stock_basic(exchange="", list_status="L", fields="ts_code,name")
 
     for i in df1["name"]:
