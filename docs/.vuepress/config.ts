@@ -115,22 +115,37 @@ export default defineUserConfig({
     //     kotlin: true,     // ::: kotlin-repl
     //     python: true,     // ::: python-repl
     //   },
-    //   math: {             // 启用数学公式
-    //     type: 'katex',
-    //   },
+      math: {             // 启用数学公式
+        type: 'katex',
+      },
     //   chartjs: true,      // 启用 chart.js
-    //   echarts: true,      // 启用 ECharts
-    //   mermaid: true,      // 启用 mermaid
-    //   flowchart: true,    // 启用 flowchart
-    //   image: {
-    //     figure: true,     // 启用 figure
-    //     lazyload: true,   // 启用图片懒加载
-    //     mark: true,       // 启用图片标记
-    //     size: true,       // 启用图片大小
-    //   },
-    //   include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
+      echarts: true,      // 启用 ECharts
+      mermaid: true,      // 启用 mermaid
+      flowchart: true,    // 启用 flowchart
+      image: {
+        figure: true,     // 启用 figure
+        lazyload: true,   // 启用图片懒加载
+        mark: true,       // 启用图片标记
+        size: true,       // 启用图片大小
+      },
+      // include: true,      // 在 Markdown 文件中导入其他 markdown 文件内容
     //   imageSize: 'local', // 启用 自动填充 图片宽高属性，避免页面抖动
     collapse: true, 
+    chat: true,
+    table: {
+      // 表格默认对齐方式 'left' | 'center' | 'right'
+      align: 'center',
+      // 表格宽度是否为最大内容宽度
+      // 行内元素不再自动换行，超出容器宽度时表格显示滚动条
+      maxContent: false,
+      // 表格宽度默认占据整行
+      fullWidth: false,
+      /**
+       * 复制为 html/markdown
+       * true 相当于 `all`，相当于同时启用 html 和 markdown
+       */
+      copy: true, // true | 'all' | 'html' | 'md'
+    }
   },
 
     /**

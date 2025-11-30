@@ -29,5 +29,10 @@
   },
   "engines": {
     "node": "^20.6.0 || >=22.0.0"
+  },
+  "dependencies": {
+    "echarts": "^6.0.0",
+    "flowchart.ts": "^3.0.1",
+    "mermaid": "^11.12.1"
   }
 }
