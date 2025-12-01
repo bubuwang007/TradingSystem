@@ -9,5 +9,5 @@ permalink: /ks/3oygygr1/
 ## 安装
 
 ```bash
-pip install tushare --upgrade
+pip install tushare --upgrade -i https://pypi.org/simple
 ```
