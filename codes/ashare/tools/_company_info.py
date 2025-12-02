@@ -13,7 +13,7 @@ def get_l3_companies_info(l3_code: str):
         if stock.empty:
             yield f"## {i}\n\n公司状态异常。\n"
             continue
-    
+
         try:
             cmp = pro.stock_company(
                 ts_code=stock["ts_code"].values[0],
