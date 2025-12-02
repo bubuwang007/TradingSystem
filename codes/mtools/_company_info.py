@@ -1,12 +1,14 @@
 import tushare as ts
-
+from mtools import init_tushare
+from stock_databases import StockBasic
 
 def get_l3_companies_info(l3_code: str):
+    init_tushare()
     pro = ts.pro_api()
     df1 = pro.index_member_all(l3_code=l3_code)
     for i in df1["name"]:
         print(i)
-    df2 = pro.stock_basic(exchange="", list_status="L", fields="ts_code,name")
+    df2 = StockBasic.load_stock_basic_dataframe()
 
     for i in df1["name"]:
         stock = df2[df2["name"] == i]

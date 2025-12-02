@@ -1,9 +1,4 @@
-from mtools import Excel2MdTable
+from stock_databases import StockBasic
 
-e2t = Excel2MdTable(
-    r"C:\Users\hys\Desktop\creation\TradingSystem\codes\excel\2025_12_21持仓.xlsx",
-    "持仓",
-)
-
-res = e2t.generate()
-print(res)
+df = StockBasic.load_stock_basic_dataframe()
+print(df.head())
