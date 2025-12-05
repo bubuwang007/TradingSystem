@@ -6,11 +6,11 @@ class Excel2MdTable:
     def __init__(
         self, excel_file: str, title, sheet_name: str = None, type: str = "vuepress"
     ):
-        self.wb = op.load_workbook(excel_file)
+        self.wb = op.load_workbook(excel_file,data_only=True)
         self.sheet = self.wb[sheet_name] if sheet_name else self.wb.active
         self.type = type
         self.title = title
-
+        
     def generate(self) -> str:
         md_table = []
         for row in self.sheet.iter_rows():
