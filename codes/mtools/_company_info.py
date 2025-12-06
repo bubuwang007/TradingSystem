@@ -1,8 +1,10 @@
 import tushare as ts
 from mtools import init_tushare
-from stock_databases import StockBasic
+
 
 def get_l3_companies_info(l3_code: str):
+    from stock_databases import StockBasic
+
     init_tushare()
     pro = ts.pro_api()
     df1 = pro.index_member_all(l3_code=l3_code)
@@ -23,6 +25,7 @@ def get_l3_companies_info(l3_code: str):
             )
         except Exception:
             import time
+
             time.sleep(65)
             cmp = pro.stock_company(
                 ts_code=stock["ts_code"].values[0],

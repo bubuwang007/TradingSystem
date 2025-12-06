@@ -8,4 +8,6 @@ docs/.vuepress/dist
 *.log
 .env.yaml
 
+a_stock
+
 __pycache__
