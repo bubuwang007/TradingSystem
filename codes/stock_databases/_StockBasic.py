@@ -15,7 +15,7 @@ class StockBasic:
             list_status="L",
             fields="ts_code,symbol,name,area,industry,fullname,enname,cnspell,market,exchange,curr_type,list_status,list_date,delist_date,is_hs,act_name,act_ent_type",
         )
-        df2.to_csv(StockBasic.generate_database_file(), index=False, encoding="utf-8")
+        df2.to_csv(StockBasic.get_stock_basic_filepath(), index=False, encoding="utf-8")
 
     @staticmethod
     def get_stock_basic_filepath():
