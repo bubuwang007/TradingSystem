@@ -17,12 +17,6 @@ class K:
             df = self.stock_daily.get_stock_daily_by_code(ts_code)
         else:
             raise ValueError("Either name or ts_code must be provided.")
-        
-        import matplotlib
-        import matplotlib.pyplot as plt
-
-        matplotlib.rcParams['font.sans-serif'] = ['SimHei']  # 黑体
-        matplotlib.rcParams['axes.unicode_minus'] = False    # 负号正常显示
 
         df['trade_date'] = pd.to_datetime(df['trade_date'])
         df = df.sort_values('trade_date')
